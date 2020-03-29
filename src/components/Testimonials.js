@@ -1,28 +1,38 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { v4 } from 'uuid'
+import React from 'react';
+import {
+	FaSass,
+	FaHtml5,
+	FaReact,
+	FaMobileAlt,
+	FaRocket,
+	FaOsi
+} from 'react-icons/fa';
 
-const Testimonials = ({ testimonials }) => (
-  <div>
-    {testimonials.map(testimonial => (
-      <article key={v4()} className="message">
-        <div className="message-body">
-          {testimonial.quote}
-          <br />
-          <cite> – {testimonial.author}</cite>
-        </div>
-      </article>
-    ))}
-  </div>
-)
+import './style.scss';
+import Emoji from './emoji';
+import Testimonial from './testimonial';
 
-Testimonials.propTypes = {
-  testimonials: PropTypes.arrayOf(
-    PropTypes.shape({
-      quote: PropTypes.string,
-      author: PropTypes.string,
-    })
-  ),
-}
+const Testimonials = () => (
+	<div>
+		<section className="section">
+			<div className="container">
+				<div className="columns is-multiline">
+					<div className="column is-half">
+						<Testimonial/>
+					</div>
+					<div className="column is-half">
+						<Testimonial/>
+					</div>
+					<div className="column is-half">
+						<Testimonial/>
+					</div>
+					<div className="column is-half">
+						<Testimonial/>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+);
 
-export default Testimonials
+export default Testimonials;
